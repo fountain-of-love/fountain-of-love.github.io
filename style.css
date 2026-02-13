@@ -1,0 +1,1226 @@
+/* =========================
+   TOKENS (Petrol + Gold, business-card feel)
+========================= */
+
+/* Theme switching:
+   - Default uses prefers-color-scheme
+   - Optional override: <html data-theme="light"> or <html data-theme="dark">
+*/
+
+:root{
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+
+  /* layout */
+  --container: 1120px;
+  --container-narrow: 720px;
+
+  /* type */
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --text-1: 0.95rem;
+  --text-2: 1rem;
+  --text-3: 1.125rem;
+  --text-4: 1.375rem;
+  --text-5: 1.75rem;
+  --text-6: 2.35rem;
+
+  --lh-tight: 1.14;
+  --lh-normal: 1.52;
+
+  /* radius */
+  --radius-1: 12px;
+  --radius-2: 18px;
+
+  /* measure */
+  --measure: 70ch;
+  --measure-narrow: 60ch;
+
+  /* shadows (soft print) */
+  --shadow-1: 0 1px 2px rgba(15,18,20,0.10);
+  --shadow-2: 0 14px 34px rgba(15,18,20,0.18);
+
+  /* Brand palette (tuned to your cards) */
+  --parchment: #f3e8cf;   /* warm paper */
+  --paper:     #efe1c2;   /* slightly darker paper surface */
+  --ink:       #122a33;   /* deep ink for high contrast */
+  --ink-2:     #2c424a;   /* secondary ink */
+  --petrol:    #0f5456;   /* deep petrol green */
+  --petrol-2:  #0b4042;   /* deeper petrol for hovers */
+  --gold:      #c9a24a;   /* warm gold */
+  --gold-2:    #b2892e;   /* darker gold for emphasis */
+
+  /* System neutrals derived */
+  --bg: var(--parchment);
+  --fg: var(--ink);
+  --muted: color-mix(in oklab, var(--ink) 68%, #ffffff);
+  --surface: var(--paper);
+  --surface-2: color-mix(in oklab, var(--paper) 75%, #ffffff);
+  --border: rgba(18,42,51,0.18);
+
+  /* interactive */
+  --accent: var(--petrol);
+  --accent-contrast: #f7f0dc;
+  --accent-2: var(--gold);
+
+  /* selection */
+  --selection-bg: rgba(201,162,74,0.35);
+  --selection-fg: var(--ink);
+}
+
+/* auto dark */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b1113;
+    --fg: #e7dbbe;
+    --muted: rgba(231,219,190,0.78);
+
+    --surface: #0e1b1d;
+    --surface-2: rgba(14,27,29,0.78);
+
+    --border: rgba(231,219,190,0.18);
+
+    --accent: var(--petrol);
+    --accent-contrast: #f6edd6;
+    --accent-2: var(--gold);
+
+    --selection-bg: rgba(15,84,86,0.45);
+    --selection-fg: #f6edd6;
+  }
+}
+
+/* manual override */
+html[data-theme="light"]{
+  --bg: var(--parchment);
+  --fg: var(--ink);
+  --muted: color-mix(in oklab, var(--ink) 68%, #ffffff);
+  --surface: var(--paper);
+  --surface-2: color-mix(in oklab, var(--paper) 75%, #ffffff);
+  --border: rgba(18,42,51,0.18);
+  --selection-bg: rgba(201,162,74,0.35);
+  --selection-fg: var(--ink);
+}
+html[data-theme="dark"]{
+  --bg: #0b1113;
+  --fg: #e7dbbe;
+  --muted: rgba(231,219,190,0.78);
+  --surface: #0e1b1d;
+  --surface-2: rgba(14,27,29,0.78);
+  --border: rgba(231,219,190,0.18);
+  --selection-bg: rgba(15,84,86,0.45);
+  --selection-fg: #f6edd6;
+}
+
+/* =========================
+   RESET / BASE
+========================= */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+::selection{
+  background: var(--selection-bg);
+  color: var(--selection-fg);
+}
+
+body{
+  margin:0;
+  font-family: var(--font-sans);
+  font-size: var(--text-2);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+}
+
+body.modal-open{
+  overflow: hidden;
+}
+
+img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+
+a{
+  color: color-mix(in oklab, var(--fg) 92%, var(--accent) 8%);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--gold) 70%, transparent);
+  text-underline-offset: 4px;
+}
+
+a:hover{
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--gold);
+}
+
+:focus-visible{
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top: var(--space-4);
+  background: var(--bg);
+  border:1px solid var(--border);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-1);
+  box-shadow: var(--shadow-1);
+}
+.skip-link:focus{
+  left: var(--space-4);
+  z-index: 1000;
+}
+
+/* =========================
+   LAYOUT + RHYTHM
+========================= */
+
+.container{
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.container--narrow{
+  max-width: var(--container-narrow);
+}
+
+.section{
+  padding-block: var(--space-7);
+}
+
+/* alternating rhythm, but more “paper stock” */
+.section--tinted{
+  background: color-mix(in oklab, var(--surface) 88%, var(--bg));
+}
+.section--muted{
+  background: color-mix(in oklab, var(--surface-2) 90%, var(--bg));
+}
+
+/* headings ladder */
+.section__header{ margin-bottom: var(--space-5); }
+
+.section__title{
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-5);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  max-width: var(--measure);
+  font-weight: 900;
+  color: var(--fg);
+}
+
+.section__intro{
+  margin:0;
+  max-width: var(--measure);
+  color: var(--muted);
+  font-weight: 560;
+}
+
+.subsection__title{
+  margin: var(--space-6) 0 var(--space-3);
+  font-size: var(--text-3);
+  line-height: var(--lh-tight);
+  max-width: var(--measure);
+  font-weight: 850;
+  color: var(--fg);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header{
+  position: sticky;
+  top:0;
+  z-index: 50;
+  background-color: #EFE6D8;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.site-header__inner{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+}
+
+.site-header__brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration:none;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+}
+
+.site-header__brand-icon{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  opacity: 0.95;
+  flex: none;
+}
+
+.site-header__brand-name{
+  color: var(--fg);
+}
+
+.site-nav{ display:none; }
+
+.site-nav__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap: var(--space-4);
+}
+
+.site-nav__link{
+  text-decoration:none;
+  color: color-mix(in oklab, var(--fg) 72%, var(--muted));
+  padding: 10px 10px;
+  border-radius: 12px;
+  font-weight: 800;
+  border: 1px solid transparent;
+}
+
+.site-nav__link:hover{
+  color: var(--fg);
+  border-color: color-mix(in oklab, var(--gold) 28%, transparent);
+  background: color-mix(in oklab, var(--gold) 10%, transparent);
+}
+
+/* =========================
+   HERO (stance-led, business card accenting)
+========================= */
+
+.hero__inner{
+  display:grid;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.hero__title{
+  margin:0 0 var(--space-3);
+  font-size: clamp(2.2rem, 5vw, 3.35rem);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.03em;
+  max-width: var(--measure);
+  color: var(--fg);
+  font-weight: 950;
+}
+
+/* gold hairline underline, more “printed” */
+.hero__title::after{
+  content:"";
+  display:block;
+  width: 72px;
+  height: 4px;
+  border-radius: 999px;
+  margin-top: var(--space-3);
+  background: linear-gradient(90deg, var(--gold), color-mix(in oklab, var(--gold) 60%, #ffffff));
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.03);
+}
+
+.hero__subtitle{
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-4);
+  color: color-mix(in oklab, var(--fg) 82%, var(--muted));
+  max-width: var(--measure);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.hero__intro{
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-2);
+  color: var(--muted);
+  max-width: var(--measure);
+  font-weight: 560;
+}
+
+
+.hero__statement{ max-width: var(--measure); }
+
+.hero__lead{
+  margin: var(--space-4) 0 var(--space-2);
+  font-weight: 900;
+  color: var(--fg);
+}
+
+.hero__lead--muted{
+  color: color-mix(in oklab, var(--fg) 62%, var(--muted));
+  font-weight: 900;
+}
+
+.hero__actions{
+  display:flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* hero right-column companion: engraved manuscript margin */
+.hero__visual{
+  display: none;
+  position: relative;
+  border-radius: var(--radius-2);
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255,255,255,0.35), transparent 58%),
+    color-mix(in oklab, var(--paper) 92%, #f7efd9);
+  border: 1.5px solid color-mix(in oklab, var(--petrol) 52%, var(--border));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--gold) 22%, transparent),
+    0 10px 24px rgba(0,0,0,0.10);
+  min-height: 240px;
+  padding: clamp(14px, 2vw, 24px);
+}
+
+.hero__visual::before{
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid color-mix(in oklab, var(--petrol) 30%, transparent);
+  border-radius: calc(var(--radius-2) - 6px);
+  pointer-events: none;
+}
+
+.hero__visual::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(0deg, rgba(15,84,86,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,84,86,0.02) 1px, transparent 1px);
+  background-size: 6px 6px, 6px 6px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero__image{
+  width: min(100%, 92%);
+  height: auto;
+  object-fit: contain;
+  filter: sepia(0.5) saturate(0.55) contrast(0.9) brightness(0.92);
+  opacity: 0.82;
+}
+
+/* =========================
+   CARDS / GRID
+========================= */
+
+.cards{
+  display:grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+/* Default cards: paper look with gold hairline */
+.card{
+  border: 1px solid color-mix(in oklab, var(--gold) 18%, var(--border));
+  border-radius: var(--radius-2);
+  padding: var(--space-5);
+  background: color-mix(in oklab, var(--paper) 92%, var(--bg));
+  box-shadow: var(--shadow-1);
+}
+
+/* soft cards: slightly lighter */
+.card--soft{
+  background: color-mix(in oklab, var(--paper) 78%, #ffffff);
+  border-color: color-mix(in oklab, var(--gold) 16%, var(--border));
+}
+
+.card__title{
+  margin:0 0 var(--space-2);
+  font-size: var(--text-3);
+  line-height: var(--lh-tight);
+  color: var(--fg);
+  font-weight: 900;
+}
+
+.card__text{
+  margin:0;
+  color: var(--muted);
+  max-width: var(--measure-narrow);
+}
+
+/* Offer cards: “object” behavior */
+.card--link{
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+.card--link:hover{
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--gold) 40%, var(--border));
+  background: color-mix(in oklab, var(--paper) 88%, #ffffff);
+  box-shadow: var(--shadow-2);
+}
+
+.card__link{
+  display:inline-flex;
+  margin-top: var(--space-3);
+  font-weight: 900;
+  text-decoration:none;
+  color: var(--petrol);
+}
+.card__link:hover{
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+}
+
+/* =========================
+   PETROL PANELS (like your second image)
+   Apply to key sections: experience, system, offer (as strong bands)
+========================= */
+
+.credibility,
+.system,
+.offerings{
+  background: transparent;
+  position: relative;
+}
+
+.credibility .container,
+.system .container,
+.offerings .container{
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--petrol) 92%, #000000),
+    color-mix(in oklab, var(--petrol-2) 92%, #000000)
+  );
+  border: 1px solid color-mix(in oklab, var(--gold) 38%, rgba(0,0,0,0.2));
+  border-radius: calc(var(--radius-2) + 6px);
+  padding: var(--space-6);
+  box-shadow: 0 18px 46px rgba(0,0,0,0.22);
+}
+
+/* Text on petrol panels */
+.credibility .section__title,
+.system .section__title,
+.offerings .section__title,
+.credibility .subsection__title,
+.system .subsection__title{
+  color: #f6edd6;
+}
+
+.credibility .section__intro,
+.system .section__intro,
+.offerings .section__intro{
+  color: rgba(246,237,214,0.78);
+}
+
+.credibility .card,
+.system .card,
+.offerings .card{
+  background: rgba(10, 52, 54, 0.55);
+  border-color: color-mix(in oklab, var(--gold) 28%, rgba(255,255,255,0.10));
+  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+}
+
+.credibility .card__title,
+.system .card__title,
+.offerings .card__title{
+  color: #f6edd6;
+}
+
+.credibility .card__text,
+.system .card__text,
+.offerings .card__text{
+  color: rgba(246,237,214,0.78);
+}
+
+.offerings .card__link{
+  color: var(--gold);
+}
+
+/* =========================
+   SPLIT / COMPARISON
+========================= */
+
+.split{
+  display:grid;
+  gap: var(--space-4);
+}
+
+.comparison{
+  display:grid;
+  gap: var(--space-4);
+  align-items: stretch;
+  margin-top: var(--space-6);
+}
+
+.comparison__arrow{
+  display:none;
+  align-self:center;
+  justify-self:center;
+  color: var(--gold);
+  font-size: var(--text-4);
+  font-weight: 950;
+}
+
+/* future column: petrol tint with gold edge */
+.comparison__col--future{
+  border-color: color-mix(in oklab, var(--gold) 34%, var(--border));
+  background: color-mix(in oklab, var(--petrol) 8%, var(--paper));
+}
+
+.comparison__col--future .card__title{
+  color: color-mix(in oklab, var(--petrol) 68%, var(--fg));
+}
+
+/* =========================
+   STEPPER
+========================= */
+
+.stepper__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap: var(--space-4);
+}
+
+.stepper__item{
+  border-left: 3px solid color-mix(in oklab, var(--gold) 34%, var(--border));
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.stepper__item::before{
+  content:"";
+  position:absolute;
+  left: -9px;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--petrol);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--gold) 55%, transparent);
+}
+
+.stepper__title{
+  margin:0 0 var(--space-2);
+  font-size: var(--text-3);
+  line-height: var(--lh-tight);
+  color: var(--fg);
+  font-weight: 900;
+}
+
+.stepper__text{
+  margin:0;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+/* =========================
+   FLOW (System explanation)
+========================= */
+
+.flow{
+  display:grid;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.flow__item{
+  max-width: 560px;
+  border-left: 4px solid color-mix(in oklab, var(--gold) 40%, transparent);
+}
+
+.flow .card__title{
+  color: var(--gold);
+}
+
+/* =========================
+   LISTS / PROSE
+========================= */
+
+.list{
+  margin: var(--space-2) 0 0;
+  padding-left: 1.2em;
+  max-width: var(--measure);
+}
+
+.list li{ margin: var(--space-1) 0; }
+
+.prose{ max-width: var(--measure); }
+
+.prose p{ margin: 0 0 var(--space-4); }
+.prose p:last-child{ margin-bottom:0; }
+
+/* Resonance: breathing space */
+.resonance .prose{ max-width: var(--measure-narrow); }
+.resonance .button{ font-size: var(--text-1); padding: 10px 14px; }
+
+/* =========================
+   ACCORDION
+========================= */
+
+.accordion{
+  display:grid;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.accordion__item{
+  border: 1px solid color-mix(in oklab, var(--gold) 22%, var(--border));
+  border-radius: var(--radius-2);
+  padding: var(--space-3) var(--space-4);
+  background: color-mix(in oklab, var(--paper) 90%, #ffffff);
+  box-shadow: var(--shadow-1);
+  border-left: 4px solid transparent;
+}
+
+.accordion__item[open]{
+  border-left-color: var(--petrol);
+}
+
+.accordion__summary{
+  cursor:pointer;
+  font-weight: 950;
+  color: var(--fg);
+}
+
+.accordion__content{
+  margin-top: var(--space-3);
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+/* =========================
+   BUTTONS (confident, printed edge)
+========================= */
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: 999px; /* slightly more “badge-like” */
+  border: 1px solid color-mix(in oklab, var(--gold) 22%, var(--border));
+  background: transparent;
+  color: var(--fg);
+  text-decoration:none;
+  font-weight: 950;
+  cursor:pointer;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, color 140ms ease, box-shadow 140ms ease;
+}
+
+.button:active{ transform: translateY(1px); }
+
+.button--primary{
+  background: var(--petrol);
+  color: var(--accent-contrast);
+  border-color: transparent;
+  box-shadow:
+    0 0 0 2px color-mix(in oklab, var(--gold) 28%, transparent),
+    0 10px 24px rgba(0,0,0,0.18);
+}
+
+.button--primary:hover{
+  background: var(--petrol-2);
+  box-shadow:
+    0 0 0 2px color-mix(in oklab, var(--gold) 42%, transparent),
+    0 14px 30px rgba(0,0,0,0.22);
+}
+
+.button--secondary{
+  background: color-mix(in oklab, var(--gold) 12%, transparent);
+  border-color: color-mix(in oklab, var(--gold) 38%, var(--border));
+  color: color-mix(in oklab, var(--ink) 84%, var(--petrol) 16%);
+}
+
+.button--secondary:hover{
+  background: color-mix(in oklab, var(--gold) 18%, transparent);
+  border-color: color-mix(in oklab, var(--gold) 55%, var(--border));
+}
+
+.button--gold{
+  background: linear-gradient(180deg, #d5b76d, var(--gold));
+  color: var(--ink);
+  border-color: color-mix(in oklab, var(--gold-2) 68%, var(--border));
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--gold-2) 20%, transparent),
+    0 8px 18px rgba(0,0,0,0.12);
+}
+
+.button--gold:hover{
+  background: linear-gradient(180deg, #dcc07a, #cfa448);
+}
+
+.definition__note-action{
+  margin-top: var(--space-5);
+}
+
+.personal-note-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+}
+
+.personal-note-modal[hidden]{
+  display: none;
+}
+
+.personal-note-modal__overlay{
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(0,0,0,0.38);
+  cursor: pointer;
+}
+
+.personal-note-modal__panel{
+  position: relative;
+  width: min(780px, 100%);
+  max-height: min(88vh, 780px);
+  overflow: auto;
+  background: var(--parchment);
+  border: 2px solid var(--petrol);
+  border-radius: var(--radius-2);
+  padding: var(--space-6);
+  box-shadow: 0 20px 42px rgba(0,0,0,0.28);
+}
+
+.personal-note-modal__title{
+  margin: 0 0 var(--space-4);
+  color: var(--petrol);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+}
+
+.personal-note-modal__prose{
+  max-width: 62ch;
+  color: color-mix(in oklab, var(--ink) 88%, var(--petrol) 12%);
+}
+
+.personal-note-modal__prose p{
+  white-space: pre-line;
+}
+
+.personal-note-modal__close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--petrol) 28%, var(--border));
+  background: color-mix(in oklab, var(--parchment) 82%, #ffffff);
+  color: var(--petrol);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.personal-note-modal__close:hover{
+  background: color-mix(in oklab, var(--gold) 24%, var(--parchment));
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+  border-top: 1px solid color-mix(in oklab, var(--gold) 18%, var(--border));
+  padding-block: var(--space-6);
+  background: color-mix(in oklab, var(--paper) 82%, var(--bg));
+}
+
+.site-footer__inner{
+  display:flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.site-footer__meta{
+  color: color-mix(in oklab, var(--fg) 70%, var(--muted));
+}
+
+.site-footer__link{
+  display:inline-block;
+  margin-right: var(--space-4);
+  text-decoration:none;
+  color: color-mix(in oklab, var(--fg) 62%, var(--muted));
+  font-weight: 800;
+}
+.site-footer__link:hover{ color: var(--petrol); }
+
+/* =========================
+   UX POLISH PER SECTION
+========================= */
+
+/* Define the Ground: direction cue */
+.definition .split__col:first-child{
+  border-left: 4px solid color-mix(in oklab, var(--gold) 18%, transparent);
+}
+.definition .split__col:last-child{
+  border-left: 4px solid color-mix(in oklab, var(--petrol) 62%, transparent);
+}
+
+/* Promises: “We promise” side feels more assured */
+.promises .split__col:last-child{
+  background: color-mix(in oklab, var(--petrol) 10%, var(--paper));
+  border-color: color-mix(in oklab, var(--gold) 34%, var(--border));
+}
+
+/* Closing invitation stays calm */
+.closing .section__title,
+.closing .prose{
+  max-width: var(--measure-narrow);
+}
+
+/* =========================
+   BREAKPOINTS
+========================= */
+
+/* ≥ 640px */
+@media (min-width: 640px){
+  .container{ padding-inline: var(--space-5); }
+  .section{ padding-block: var(--space-8); }
+
+  .hero__actions{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cards--3{ grid-template-columns: repeat(2, 1fr); }
+  .cards--4{ grid-template-columns: repeat(2, 1fr); }
+
+  .site-footer__inner{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+  }
+
+  /* petrol panels: keep padding generous */
+  .credibility .container,
+  .system .container,
+  .offerings .container{
+    padding: var(--space-7);
+  }
+}
+
+/* ≥ 960px */
+@media (min-width: 960px){
+  .container{ padding-inline: var(--space-6); }
+  .section{ padding-block: var(--space-9); }
+
+  .site-nav{ display:block; }
+
+  .hero__inner{
+    grid-template-columns: 1.6fr 1fr;
+    align-items:center;
+  }
+
+  .hero__visual{
+    display: block;
+    align-self: stretch;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .split{
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+
+  .comparison{
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+  }
+
+  .comparison__arrow{ display:block; }
+
+  .cards--3{ grid-template-columns: repeat(3, 1fr); }
+  .cards--4{ grid-template-columns: repeat(4, 1fr); }
+
+  .flow{
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: start;
+  }
+}
+
+
+/* ≥ 1200px */
+@media (min-width: 1200px){
+  /* reserved for fine tuning */
+}
+
+
+/* =========================
+   SOVEREIGN PARCHMENT + BORDER
+   Applied to:
+   - Site background (light theme)
+   - Personal note modal panel
+   Paste at END of style.css
+========================= */
+
+/* Sovereign greens (deeper than petrol, closer to “royal ink”) */
+:root{
+  --sovereign-green: #1f5a3f;
+  --sovereign-green-hi: #2e7a57;
+  --sovereign-green-deep: #143c2b;
+
+  /* Parchment tonal range (richer than your flat --parchment) */
+  --parchment-1: #f6e7c5;
+  --parchment-2: #e9d3a6;
+  --parchment-3: #d8bf8c;
+}
+
+/* ---------- Site background parchment texture (LIGHT only) ---------- */
+/* Uses your existing body background var(--bg) but upgrades it to layered parchment. */
+html[data-theme="light"] body{
+  background:
+    radial-gradient(120% 100% at 20% 10%, var(--parchment-1) 0%, var(--parchment-2) 40%, var(--parchment-3) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.14), rgba(0,0,0,0.06));
+  background-blend-mode: multiply;
+}
+
+/* Fiber grain overlay for the whole page (LIGHT only) */
+html[data-theme="light"] body{
+  position: relative;
+}
+html[data-theme="light"] body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1; /* behind everything */
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.02) 0px,
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      -18deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+}
+
+/* Optional faint “gold dust” warmth (LIGHT only) */
+html[data-theme="light"] body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.10;
+  mix-blend-mode: overlay;
+
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,215,120,0.20), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(255,215,120,0.10), transparent 55%);
+}
+
+/* ---------- Personal Note Modal: sovereign parchment + border ---------- */
+
+/* Slightly richer overlay to feel “private chamber” */
+.personal-note-modal__overlay{
+  background:
+    radial-gradient(circle at 20% 10%, rgba(0,0,0,0.48), rgba(0,0,0,0.58));
+}
+
+/* The panel becomes the “card”: parchment + double border + engraved depth */
+.personal-note-modal__panel{
+  position: relative; /* needed for pseudo elements */
+  background:
+    radial-gradient(120% 100% at 20% 10%, var(--parchment-1) 0%, var(--parchment-2) 40%, var(--parchment-3) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.14), rgba(0,0,0,0.08));
+  background-blend-mode: multiply;
+
+  border: 2px solid var(--sovereign-green);
+  outline: 1px solid var(--sovereign-green-hi);
+  outline-offset: -10px;
+  border-radius: 12px;
+
+  box-shadow:
+    inset 0 0 40px rgba(120, 90, 40, 0.22),
+    inset 0 0 6px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(0,0,0,0.16),
+    0 20px 42px rgba(0,0,0,0.32);
+
+  filter: contrast(0.985) saturate(0.97);
+}
+
+/* Grain on the panel only (so it reads like paper on top of paper) */
+.personal-note-modal__panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius: inherit;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.02) 0px,
+      rgba(0,0,0,0.02) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      -18deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+}
+
+/* Corner ornaments without extra HTML:
+   Draw 4 “L” brackets via background layers */
+.personal-note-modal__panel::after{
+  content:"";
+  position:absolute;
+  inset: 10px; /* aligns with outline inset vibe */
+  pointer-events:none;
+  border-radius: calc(12px - 10px);
+
+  background:
+    /* top-left */
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) left top / 22px 2px no-repeat,
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) left top / 2px 22px no-repeat,
+
+    /* top-right */
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) right top / 22px 2px no-repeat,
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) right top / 2px 22px no-repeat,
+
+    /* bottom-left */
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) left bottom / 22px 2px no-repeat,
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) left bottom / 2px 22px no-repeat,
+
+    /* bottom-right */
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) right bottom / 22px 2px no-repeat,
+    linear-gradient(var(--sovereign-green), var(--sovereign-green)) right bottom / 2px 22px no-repeat;
+
+  opacity: 0.95;
+
+  /* tiny engraving nuance */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.10);
+}
+
+/* Bring modal typography into the sovereign palette */
+.personal-note-modal__title{
+  color: var(--sovereign-green);
+}
+
+.personal-note-modal__prose{
+  color: color-mix(in oklab, var(--ink) 90%, var(--sovereign-green) 10%);
+}
+
+/* Close button harmonized with sovereign frame */
+.personal-note-modal__close{
+  border-color: color-mix(in oklab, var(--sovereign-green) 32%, var(--border));
+  color: var(--sovereign-green);
+  background: color-mix(in oklab, var(--parchment) 82%, #ffffff);
+}
+.personal-note-modal__close:hover{
+  background: color-mix(in oklab, var(--gold) 22%, var(--parchment));
+}
+
+
+/* Hero word highlight: LOVE */
+.hero-love{
+  position: relative;
+  color: var(--sovereign-green, #1f5a3f);
+  color: #D88F8F;
+
+  /* contrast by voice, not volume */
+  font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+
+  /* tiny vertical grace */
+  display: inline-block;
+  transform: translateY(0.02em);
+  font-family: var(--font-serif);
+}
+
+/* soft sovereign underline */
+.hero-love::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.08em;
+  height: 0.18em;
+  border-radius: 999px;
+
+  filter: blur(0.4px);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.hero{
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   PARCHMENT TILE OVERRIDES
+   Keep this at end so it wins over earlier theme/background blocks.
+========================= */
+
+body,
+html[data-theme="light"] body{
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.04)),
+    url("./parchment_tile.png");
+  background-repeat: repeat, repeat;
+  background-size: auto, 520px 520px;
+  background-blend-mode: multiply, multiply;
+}
+
+.personal-note-modal__panel{
+  background-color: var(--parchment);
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.14), rgba(0,0,0,0.06)),
+    url("./parchment_tile.png");
+  background-repeat: repeat, repeat;
+  background-size: auto, 360px 360px;
+  background-blend-mode: multiply, multiply;
+}

@@ -1,0 +1,411 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title></title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="#stance" aria-label="Home">
+        <img class="site-header__brand-icon" src="./Love.png" alt="" aria-hidden="true" />
+        <span class="site-header__brand-name" data-text="header.brandName"></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list" data-each="header.nav">
+          <template>
+            <li class="site-nav__item">
+              <a class="site-nav__link" data-attr-href="href" data-text="label"></a>
+            </li>
+          </template>
+        </ul>
+      </nav>
+
+      <nav class="lang-switcher" aria-label="Language selector">
+        <a class="lang-switcher__link" data-lang="en" href="?lang=en">EN</a>
+        <a class="lang-switcher__link" data-lang="nl" href="?lang=nl">NL</a>
+        <a class="lang-switcher__link" data-lang="fr" href="?lang=fr">FR</a>
+        <a class="lang-switcher__link" data-lang="de" href="?lang=de">DE</a>
+      </nav>
+
+      <div class="site-header__cta" data-if="header.primaryCta">
+        <a class="button button--primary"
+           data-attr-href="header.primaryCta.href"
+           data-text="header.primaryCta.label"></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main" class="page__main" role="main">
+
+    <!-- 1) HERO — THE STANCE -->
+    <section id="stance" class="section hero" aria-labelledby="stance-title" data-if="sections.stance">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 id="stance-title" class="hero__title" data-html="sections.stance.title"></h1>
+            <p class="hero__subtitle" data-text="sections.stance.subtitle"></p>
+            <p class="hero__intro" data-html="sections.stance.intro"></p>
+
+
+          <div class="hero__statement">
+            <p class="hero__lead hero__lead--muted" data-text="sections.stance.rootedInLead"></p>
+            <ul class="list list--bullets hero__bullets" data-each="sections.stance.rootedIn">
+              <template><li data-text="."></li></template>
+            </ul>
+
+            <p class="hero__lead hero__lead--muted" data-text="sections.stance.weDoNotLead"></p>
+            <ul class="list list--bullets hero__bullets hero__bullets--muted" data-each="sections.stance.weDoNot">
+              <template><li data-text="."></li></template>
+            </ul>
+          </div>
+
+          <div class="hero__actions" role="group" aria-label="Primary actions">
+            <a class="button button--primary"
+               data-attr-href="sections.stance.actions.primary.href"
+               data-text="sections.stance.actions.primary.label"></a>
+
+            <a class="button button--secondary"
+               data-attr-href="sections.stance.actions.secondary.href"
+               data-text="sections.stance.actions.secondary.label"></a>
+          </div>
+        </div>
+
+        <aside class="hero__visual" aria-hidden="true"
+               data-if="sections.stance.visual">
+          <!-- optional: you can bind an image src if you want -->
+          <img class="hero__image"
+               alt=""
+               loading="lazy"
+               data-if="sections.stance.visual.src"
+               data-attr-src="sections.stance.visual.src" />
+        </aside>
+      </div>
+    </section>
+
+    <!-- 2) DEFINE THE GROUND -->
+    <section id="ground" class="section definition section--tinted" aria-labelledby="ground-title" data-if="sections.ground">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="ground-title" class="section__title" data-text="sections.ground.title"></h2>
+          <p class="section__intro" data-text="sections.ground.intro"></p>
+        </header>
+
+        <div class="definition__split split">
+          <div class="split__col card card--soft">
+            <h3 class="card__title" data-text="sections.ground.notTitle"></h3>
+            <ul class="list list--checks" data-each="sections.ground.notItems">
+              <template><li data-text="."></li></template>
+            </ul>
+          </div>
+
+          <div class="split__col card card--soft">
+            <h3 class="card__title" data-text="sections.ground.meansTitle"></h3>
+            <ul class="list list--checks" data-each="sections.ground.meansItems">
+              <template><li data-text="."></li></template>
+            </ul>
+          </div>
+        </div>
+
+        <p class="definition__closing" data-text="sections.ground.closing"></p>
+        <div class="definition__note-action" data-if="sections.ground.personalNote">
+          <button
+            type="button"
+            class="button button--gold"
+            data-action="open-personal-note"
+            data-text="sections.ground.personalNote.buttonLabel"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) PAIN → POLARITY → POSSIBILITY -->
+    <section id="polarity" class="section polarity" aria-labelledby="polarity-title" data-if="sections.polarity">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="polarity-title" class="section__title" data-text="sections.polarity.title"></h2>
+          <p class="section__intro" data-text="sections.polarity.intro"></p>
+        </header>
+
+        <!-- 3A Pain -->
+        <div class="polarity__pain">
+          <h3 class="subsection__title" data-text="sections.polarity.pain.title"></h3>
+          <ul class="list list--bullets" data-each="sections.polarity.pain.items">
+            <template><li data-text="."></li></template>
+          </ul>
+          <p class="polarity__note" data-text="sections.polarity.pain.note"></p>
+        </div>
+
+        <!-- 3B Comparison -->
+        <div class="polarity__comparison comparison" aria-label="Current versus future state">
+          <div class="comparison__col comparison__col--current card">
+            <h3 class="card__title" data-text="sections.polarity.comparison.currentTitle"></h3>
+            <ul class="list list--bullets" data-each="sections.polarity.comparison.currentItems">
+              <template><li data-text="."></li></template>
+            </ul>
+          </div>
+
+          <div class="comparison__arrow" aria-hidden="true">→</div>
+
+          <div class="comparison__col comparison__col--future card">
+            <h3 class="card__title" data-text="sections.polarity.comparison.futureTitle"></h3>
+            <ul class="list list--bullets" data-each="sections.polarity.comparison.futureItems">
+              <template><li data-text="."></li></template>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3C Pathway Stepper -->
+        <div class="polarity__pathway stepper">
+          <h3 class="subsection__title" data-text="sections.polarity.pathway.title"></h3>
+          <ol class="stepper__list" data-each="sections.polarity.pathway.steps">
+            <template>
+              <li class="stepper__item">
+                <h4 class="stepper__title" data-text="title"></h4>
+                <p class="stepper__text" data-text="text"></p>
+              </li>
+            </template>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) RESONANCE IS OPTIONAL -->
+    <section id="resonance" class="section resonance section--muted" aria-labelledby="resonance-title" data-if="sections.resonance">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <h2 id="resonance-title" class="section__title" data-text="sections.resonance.title"></h2>
+        </header>
+
+        <div class="prose" data-each="sections.resonance.paragraphs">
+          <template><p data-text="."></p></template>
+        </div>
+
+        <div class="resonance__action" data-if="sections.resonance.action">
+          <a class="button button--secondary"
+             data-attr-href="sections.resonance.action.href"
+             data-text="sections.resonance.action.label"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) PERSONAL EXPERIENCE -->
+    <section id="experience" class="section credibility" aria-labelledby="experience-title" data-if="sections.experience">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="experience-title" class="section__title" data-text="sections.experience.title"></h2>
+          <p class="section__intro" data-text="sections.experience.intro"></p>
+        </header>
+
+        <div class="credibility__grid cards cards--3" data-each="sections.experience.cards">
+          <template>
+            <article class="card">
+              <h3 class="card__title" data-text="title"></h3>
+              <p class="card__text" data-text="text"></p>
+            </article>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) SYSTEM EXPLANATION -->
+    <section id="system" class="section system section--tinted" aria-labelledby="system-title" data-if="sections.system">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="system-title" class="section__title" data-text="sections.system.title"></h2>
+          <p class="section__intro" data-text="sections.system.intro"></p>
+        </header>
+
+        <div class="system__flow flow" data-each="sections.system.flow">
+          <template>
+            <div class="flow__row">
+              <div class="flow__item card card--soft">
+                <h3 class="card__title" data-text="key"></h3>
+                <p class="card__text" data-text="text"></p>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <div class="system__actions">
+          <h3 class="subsection__title" data-text="sections.system.practicalTitle"></h3>
+          <ul class="list list--checks" data-each="sections.system.practicalItems">
+            <template><li data-text="."></li></template>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) WHAT WE OFFER -->
+    <section id="offer" class="section offerings" aria-labelledby="offer-title" data-if="sections.offer">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="offer-title" class="section__title" data-text="sections.offer.title"></h2>
+          <p class="section__intro" data-text="sections.offer.intro"></p>
+        </header>
+
+        <div class="offerings__grid cards cards--4" data-each="sections.offer.items">
+          <template>
+            <article class="card card--link">
+              <h3 class="card__title" data-text="title"></h3>
+              <p class="card__text" data-text="text"></p>
+              <a class="card__link" data-attr-href="href" data-text="linkLabel"></a>
+            </article>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8) HARMONY IS CULTIVATED -->
+    <section id="harmony" class="section harmony section--muted" aria-labelledby="harmony-title" data-if="sections.harmony">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="harmony-title" class="section__title" data-text="sections.harmony.title"></h2>
+          <p class="section__intro" data-text="sections.harmony.intro"></p>
+        </header>
+
+        <div class="harmony__principles cards cards--3" data-each="sections.harmony.principles">
+          <template>
+            <article class="card card--soft">
+              <h3 class="card__title" data-text="title"></h3>
+              <p class="card__text" data-text="text"></p>
+            </article>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9) WHAT WE DO NOT PROMISE -->
+    <section id="promises" class="section promises" aria-labelledby="promises-title" data-if="sections.promises">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="promises-title" class="section__title" data-text="sections.promises.title"></h2>
+          <p class="section__intro" data-text="sections.promises.intro"></p>
+        </header>
+
+        <div class="promises__split split">
+          <div class="split__col card">
+            <h3 class="card__title" data-text="sections.promises.notTitle"></h3>
+            <ul class="list list--bullets" data-each="sections.promises.notItems">
+              <template><li data-text="."></li></template>
+            </ul>
+          </div>
+
+          <div class="split__col card card--soft">
+            <h3 class="card__title" data-text="sections.promises.doTitle"></h3>
+            <ul class="list list--checks" data-each="sections.promises.doItems">
+              <template><li data-text="."></li></template>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10) SCALE & GOVERNANCE -->
+    <section id="scale" class="section scale section--tinted" aria-labelledby="scale-title" data-if="sections.scale">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="scale-title" class="section__title" data-text="sections.scale.title"></h2>
+          <p class="section__intro" data-text="sections.scale.intro"></p>
+        </header>
+
+        <div class="accordion" data-each="sections.scale.accordion">
+          <template>
+            <details class="accordion__item">
+              <summary class="accordion__summary" data-text="title"></summary>
+
+              <!-- body as paragraphs -->
+              <div class="accordion__content" data-if="isText">
+                <div class="prose" data-each="body">
+                  <template><p data-text="."></p></template>
+                </div>
+              </div>
+
+              <!-- body as list -->
+              <div class="accordion__content" data-if="isList">
+                <ul class="list list--bullets" data-each="body">
+                  <template><li data-text="."></li></template>
+                </ul>
+              </div>
+            </details>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11) CLOSING — INVITATION -->
+    <section id="invitation" class="section closing" aria-labelledby="invitation-title" data-if="sections.invitation">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <h2 id="invitation-title" class="section__title" data-text="sections.invitation.title"></h2>
+          <p class="section__intro" data-text="sections.invitation.intro"></p>
+        </header>
+
+        <div class="prose" data-each="sections.invitation.paragraphs">
+          <template><p data-text="."></p></template>
+        </div>
+
+        <ul class="list list--bullets" data-each="sections.invitation.list">
+          <template><li data-text="."></li></template>
+        </ul>
+
+        <div class="closing__actions" data-if="sections.invitation.action">
+          <a class="button button--primary"
+             data-attr-href="sections.invitation.action.href"
+             data-text="sections.invitation.action.label"></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+      <small class="site-footer__meta">
+        © <span data-text="year"></span> <span data-text="header.brandName"></span>
+      </small>
+
+      <nav class="site-footer__nav" aria-label="Footer" data-each="footer.links">
+        <template>
+          <a class="site-footer__link" data-attr-href="href" data-text="label"></a>
+        </template>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="personal-note-modal" data-personal-note-modal hidden>
+    <button
+      type="button"
+      class="personal-note-modal__overlay"
+      aria-hidden="true"
+      tabindex="-1"
+    ></button>
+    <section class="personal-note-modal__panel" role="dialog" aria-modal="true" aria-labelledby="personal-note-title">
+      <button
+        type="button"
+        class="personal-note-modal__close"
+        data-action="close-personal-note"
+        aria-label="Close"
+      >×</button>
+      <h2 id="personal-note-title" class="personal-note-modal__title" data-text="sections.ground.personalNote.title"></h2>
+      <div class="prose personal-note-modal__prose" data-each="sections.ground.personalNote.paragraphs">
+        <template><p data-text="."></p></template>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
