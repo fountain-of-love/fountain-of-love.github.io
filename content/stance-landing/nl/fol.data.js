@@ -1,46 +1,51 @@
 window.__PAGE_DATA = {
   meta: {
-    locale: "fr",
-    title: "Fontaine de l’Amour",
-    description: "Une initiative hybride à l’intersection de l’IA, de la philanthropie et des neurosciences."
+    locale: "nl",
+    title: "Fontein van Liefde",
+    description: "Een hybride initiatief op het snijvlak van AI, filantropie en neurowetenschap."
   },
 
   header: {
-    brandName: "Fontaine de l’Amour",
+    brandName: "Fontein van Liefde",
     nav: [
-      { label: "Ce que c’est", href: "#ground" },
-      { label: "Le chemin", href: "#polarity" },
-      { label: "Offres", href: "#offer" },
-      { label: "Invitation", href: "#invitation" }
+      { label: "Wat dit is", href: "#ground" },
+      { label: "Het Pad", href: "#polarity" },
+      { label: "Aanbod", href: "#offer" },
+      { label: "Uitnodiging", href: "#invitation" }
     ],
     primaryCta: {
-      label: "Entrer dans le Champ",
+      label: "Stap in het Veld",
       href: "#invitation"
     }
   },
 
   sections: {
-
     stance: {
       id: "stance",
-      title: "Vous êtes déjà construite pour <span class='hero-love'>l’Amour</span>.",
-      subtitle: "Rien ne manque. Parfois, le bon espace vous aide à vous en souvenir.",
-      intro: "Une initiative hybride reliant les personnes, concevant des processus de transformation et façonnant les technologies de nouvelle génération. L’amour comme source. La croissance comme processus. La technologie comme vecteur. Nous construisons des espaces et des systèmes où l’amour devient l’intelligence organisatrice, façonnant des architectures au service de l’épanouissement humain.",
-      rootedInLead: "Nous sommes enracinés dans :",
+      title: "Je bent al gebouwd voor <span class='hero-love'>Liefde</span>.",
+      subtitle: "Er ontbreekt niets. Soms helpt de juiste ruimte je dat te herinneren.",
+      intro: "Een hybride initiatief dat mensen verbindt, transformerende processen ontwerpt en technologieën van de volgende generatie vormgeeft.\nLiefde als bron. Groei als proces. Technologie als drager.\nWij bouwen ruimtes en systemen waarin liefde de organiserende intelligentie wordt, en zo architecturen voor menselijke bloei vormgeeft.",
+      rootedInLead: "Wij zijn geworteld in:",
       rootedIn: [
-        "Connexion souveraine : ancrée dans le cœur et portée par une structure solide.",
-        "Innovation au service de la vie : technologiquement crédible, guidée par des valeurs humaines.",
-        "Croissance éthique par la création : une réflexion qui devient responsabilité et contribution."
+        "Soevereine verbinding: hartgedragen systemen die structureel stevig zijn.",
+        "Levensversterkende innovatie: technologie met menselijke waarden als kompas.",
+        "Ethisch verankerde groei: reflectie uitgedrukt in creatie en verantwoordelijkheid."
       ],
-      weDoNotLead: "Nous ne sommes pas ici pour :",
+      weDoNotLead: "Wij hier staan niet voor:",
       weDoNot: [
-        "La dépendance déguisée en appartenance : aucune centralisation du pouvoir derrière le soin.",
-        "Le traitement sans incarnation : pas de croissance sans création.",
-        "La technologie sans conscience : ni extraction ni concentration sans responsabilité."
+        "Verbondenheid die afhankelijkheid creëert: zorg mag nooit macht bundelen.",
+        "Verwerking zonder belichaming: geen groei zonder creatie.",
+        "Technologie zonder geweten: geen extractie zonder verantwoordelijkheid."
       ],
       actions: {
-        primary: { label: "Entrer dans le Champ", href: "#invitation" },
-        secondary: { label: "Explorer l’Amour comme Champ", href: "#ground" }
+        primary: {
+          label: "Stap in het Veld",
+          href: "#invitation"
+        },
+        secondary: {
+          label: "Ontdek Liefde als Veld",
+          href: "#ground"
+        }
       },
       visual: {
         src: "./Fountain.png"
@@ -49,87 +54,87 @@ window.__PAGE_DATA = {
 
     ground: {
       id: "ground",
-      title: "Ce que nous entendons par Amour",
-      intro: "L’amour n’est pas un sentiment. C’est un champ que l’on peut ressentir lorsqu’il est présent — sécurité, vérité et connexion capables de contenir la vraie vie.",
-      notTitle: "L’amour n’est pas",
+      title: "Wat wij bedoelen met Liefde",
+      intro: "Liefde is geen sentiment. Het is een veld dat je kunt voelen wanneer het aanwezig is — veiligheid, waarheid en verbinding die het echte leven kunnen dragen.",
+      notTitle: "Liefde is niet",
       notItems: [
-        "Une idéalisation romantique",
-        "Une positivité aveugle",
-        "La dissolution des limites",
-        "Une performance émotionnelle"
+        "Romantische idealisering",
+        "Blinde positiviteit",
+        "Grenzen laten vervagen",
+        "Emotionele performance"
       ],
-      meansTitle: "L’amour signifie",
+      meansTitle: "Liefde betekent",
       meansItems: [
-        "Pouvoir détendre son corps en présence de quelqu’un",
-        "Une vérité qui se dépose sans punition",
-        "Une imperfection qui ne menace pas l’appartenance",
-        "Donner et recevoir sans tenir les comptes"
+        "Je kunt je lichaam ontspannen in iemands aanwezigheid",
+        "Waarheid landt zonder straf",
+        "Onvolmaaktheid bedreigt verbondenheid niet",
+        "Geven en ontvangen zonder bij te houden"
       ],
-      closing: "L’amour est une force sans coercition. Un lieu sûr où la vérité peut circuler.",
+      closing: "Liefde is kracht zonder dwang. Een veilige plek waar waarheid kan bewegen.",
       personalNote: {
-        buttonLabel: "Une note personnelle",
-        title: "Une note personnelle",
+        buttonLabel: "Een persoonlijke noot",
+        title: "Een Persoonlijke Noot",
         paragraphs: [
-          "J’ai porté un désir toute ma vie.",
-          "Un désir de connexion qui ne s’effondre pas sous la peur,\nde vérité qui ne coûte pas la proximité,\nd’un amour qui ressemble à la maison.",
-          "J’ai souvent été celui qui tient l’espace —\ncelui qui écoute, qui comprend, qui reste ouvert.",
-          "Mais quelque part en moi vivait une question silencieuse :\n« Quand est-ce que je peux me reposer ? »",
-          "Pendant des années, j’ai cru que cette douleur était seulement la mienne.\nAujourd’hui, je sais qu’elle vit en beaucoup d’entre nous.",
-          "Ma douleur avec Margaux est devenue une boussole.\nMon désir pour Liselot est devenu un design.\nMa blessure avec Lisa est devenue sagesse.",
-          "Le personnel est devenu collectif.",
-          "Ce mouvement — cette organisation —\nest ma réponse à cette douleur.",
-          "Un lieu où l’amour devient architecture.\nOù la douleur devient instruction.\nOù le personnel devient une porte vers quelque chose de plus grand que nous."
+          "Ik heb mijn hele leven een verlangen gedragen.",
+          "Een verlangen naar verbinding die niet instort onder angst,\nnaar waarheid die nabijheid niet kost,\nnaar liefde die voelt als thuis.",
+          "Ik was vaak degene die ruimte hield —\ndegene die luistert, begrijpt en open blijft.",
+          "Maar ergens in mij leefde een stille vraag:\n“Wanneer mag ik rusten?”",
+          "Jarenlang dacht ik dat deze pijn alleen van mij was.\nNu weet ik dat ze in velen van ons leeft.",
+          "Mijn pijn met Margaux werd een kompas.\nMijn verlangen naar Liselot werd ontwerp.\nMijn wond met Lisa werd wijsheid.",
+          "Het persoonlijke werd collectief.",
+          "Deze beweging — deze organisatie —\nis mijn antwoord op dat verlangen.",
+          "Een plek waar liefde architectuur wordt.\nWaar pijn instructie wordt.\nWaar het persoonlijke een deur wordt naar iets groters dan onszelf."
         ]
       }
     },
 
     polarity: {
       id: "polarity",
-      title: "De la Survie à la Vie",
-      intro: "Beaucoup d’entre nous semblent aller bien à l’extérieur tout en fonctionnant en mode lutte, fuite ou gel de manière répétée.",
+      title: "Van Overleven naar Leven",
+      intro: "Velen van ons lijken aan de buitenkant prima te functioneren terwijl we vanbinnen in vecht-, vlucht- of bevriesmodus blijven draaien.",
       pain: {
-        title: "Ce que nous voyons partout",
+        title: "Wat we overal zien",
         items: [
-          "Une sensation constante de menace diffuse",
-          "L’agitation comme survie : activité, stimulation, défilement",
-          "La solitude au cœur même de la connexion",
-          "Un sens porté comme un poids privé",
-          "Des blessures d’amour qui influencent silencieusement les décisions"
+          "Een constante, subtiele dreiging",
+          "Spanning als overleving: drukte, prikkels, scrollen",
+          "Eenzaamheid midden in verbinding",
+          "Zingeving als een privélast dragen",
+          "Liefdeswonden die stil beslissingen vormen"
         ],
-        note: "Nous avons tellement normalisé l’indépendance que s’appuyer sur quelqu’un semble incorrect — alors même que nous sommes faits pour la connexion."
+        note: "We hebben onafhankelijkheid zo genormaliseerd dat op iemand steunen verkeerd voelt — terwijl we gebouwd zijn voor verbinding."
       },
       comparison: {
-        currentTitle: "Survie",
+        currentTitle: "Overleven",
         currentItems: [
-          "Se crisper",
-          "Prouver",
-          "Plaire",
-          "Se cacher",
-          "S’anesthésier"
+          "Opspannen",
+          "Bewijzen",
+          "Pleasen",
+          "Verbergen",
+          "Verdoven"
         ],
-        futureTitle: "Vie",
+        futureTitle: "Leven",
         futureItems: [
-          "Sécurité",
-          "Présence",
-          "Vérité",
-          "Choix",
-          "Création"
+          "Veiligheid",
+          "Aanwezigheid",
+          "Waarheid",
+          "Keuze",
+          "Creatie"
         ]
       },
       pathway: {
-        title: "La Dynamique d’Empowerment",
+        title: "De Empowerment-dynamiek",
         steps: [
           {
-            title: "Créateurs",
-            text: "Construire ce qui est vrai au lieu de réagir à ce qui est brisé."
+            title: "Creators",
+            text: "Bouwen wat waar is in plaats van reageren op wat gebroken is."
           },
           {
-            title: "Accompagnants",
-            text: "Aider les autres à revenir à eux-mêmes sans dépendance."
+            title: "Coaches",
+            text: "Anderen helpen terugkeren naar zichzelf zonder afhankelijkheid."
           },
           {
-            title: "Challengeurs",
-            text: "Dire la vérité sans mépris et renforcer le champ."
+            title: "Challengers",
+            text: "Waarheid spreken zonder minachting en het veld versterken."
           }
         ]
       }
@@ -137,83 +142,92 @@ window.__PAGE_DATA = {
 
     resonance: {
       id: "resonance",
-      title: "La Résonance est Optionnelle",
+      title: "Resonantie is Optioneel",
       paragraphs: [
-        "Cet espace n’est pas pour tout le monde.",
-        "Observez d’abord. Rejoignez lorsque vous êtes prêt·e. Partez clairement si cela ne correspond pas.",
-        "L’amour ne met pas la pression. Il invite."
+        "Dit is geen ruimte voor iedereen.",
+        "Observeer eerst. Sluit aan wanneer je er klaar voor bent. Vertrek helder als het niet klopt.",
+        "Liefde zet geen druk. Ze nodigt uit."
       ],
       action: {
-        label: "Entrer dans le Champ",
+        label: "Stap in het Veld",
         href: "#invitation"
       }
     },
 
     experience: {
       id: "experience",
-      title: "Ancré dans le Réel",
-      intro: "Ce travail intègre neurosciences, dynamiques relationnelles et conception systémique structurée.",
+      title: "Gegrond in de Realiteit",
+      intro: "Dit werk integreert neurowetenschap, relationele dynamiek en gestructureerd systeemontwerp.",
       cards: [
         {
-          title: "Fondé sur les neurosciences",
-          text: "Nous comprenons la régulation, l’attachement et les schémas du système nerveux comme bases de la connexion."
+          title: "Neuro-wetenschappelijk Onderbouwd",
+          text: "We begrijpen regulatie, hechting en zenuwstelselpatronen als fundament van verbinding."
         },
         {
-          title: "IA avec intégrité",
-          text: "La technologie soutient la réflexion et la clarté — jamais la manipulation."
+          title: "AI met Integriteit",
+          text: "Technologie wordt gebruikt voor reflectie en helderheid — niet voor manipulatie."
         },
         {
-          title: "Intention philanthropique",
-          text: "L’initiative est structurée au service de l’épanouissement collectif, non de l’extraction."
+          title: "Filantropische Intentie",
+          text: "Het initiatief is opgezet voor collectieve bloei, niet voor extractie."
         }
       ]
     },
 
     system: {
       id: "system",
-      title: "Comment le Champ Fonctionne",
-      intro: "La Fontaine est un champ structuré conçu pour restaurer sécurité, vérité, appartenance et sens.",
+      title: "Hoe het Veld Werkt",
+      intro: "De Fontein is een gestructureerd veld ontworpen om veiligheid, waarheid, verbondenheid en betekenis te herstellen.",
       flow: [
-        { key: "Sécurité", text: "Des limites claires et des accords partagés réduisent la menace cachée." },
-        { key: "Vérité", text: "L’expression honnête renforce la proximité au lieu de la fragmenter." },
-        { key: "Réciprocité", text: "Donner et recevoir suivent un rythme, pas une dette." }
+        {
+          key: "Veiligheid",
+          text: "Heldere grenzen en gedeelde afspraken verminderen verborgen dreiging."
+        },
+        {
+          key: "Waarheid",
+          text: "Eerlijke expressie versterkt nabijheid in plaats van haar te breken."
+        },
+        {
+          key: "Wederkerigheid",
+          text: "Geven en ontvangen volgen ritme, geen schuld."
+        }
       ],
-      practicalTitle: "Concrètement",
+      practicalTitle: "In de Praktijk",
       practicalItems: [
-        "Dialogues et cercles",
-        "Pratiques de régulation et de clarté",
-        "Outils de réflexion soutenus par l’IA",
-        "Collaborations créatives au service du vivant"
+        "Dialogen en cirkels",
+        "Regulatie- en helderheidspraktijken",
+        "AI-ondersteunde reflectietools",
+        "Creator-samenwerkingen die het leven dienen"
       ]
     },
 
     offer: {
       id: "offer",
-      title: "Ce que Nous Offrons",
-      intro: "Des points d’entrée simples et ancrés vers une connexion vivante.",
+      title: "Wat Wij Aanbieden",
+      intro: "Eenvoudige, gegronde ingangen naar levende verbinding.",
       items: [
         {
-          title: "Dialogues & Cercles",
-          text: "Présence, vérité, réparation — sans performance.",
-          linkLabel: "En savoir plus",
+          title: "Dialogen & Cirkels",
+          text: "Aanwezigheid, waarheid, herstel — zonder performance.",
+          linkLabel: "Lees meer",
           href: "#"
         },
         {
-          title: "Pratiques & Invitations",
-          text: "Renforcer régulation, clarté et limites.",
-          linkLabel: "En savoir plus",
+          title: "Praktijken & Reflectievragen",
+          text: "Versterk regulatie, helderheid en grenzen.",
+          linkLabel: "Lees meer",
           href: "#"
         },
         {
-          title: "Rencontres communautaires",
-          text: "Appartenance sans intimité forcée.",
-          linkLabel: "En savoir plus",
+          title: "Community-bijeenkomsten",
+          text: "Verbondenheid zonder geforceerde intimiteit.",
+          linkLabel: "Lees meer",
           href: "#"
         },
         {
-          title: "Outils de Réflexion IA",
-          text: "Un soutien structuré pour l’insight et la conscience du non-dérive.",
-          linkLabel: "En savoir plus",
+          title: "AI Reflectietools",
+          text: "Gestructureerde ondersteuning voor inzicht en niet-afdwalen.",
+          linkLabel: "Lees meer",
           href: "#"
         }
       ]
@@ -221,62 +235,62 @@ window.__PAGE_DATA = {
 
     harmony: {
       id: "harmony",
-      title: "Nos Principes Opérationnels",
-      intro: "Des principes vécus comme architecture.",
+      title: "Onze Werkprincipes",
+      intro: "Zes principes als levende architectuur.",
       principles: [
-        { title: "L’Amour comme Architecture", text: "La connexion est structurée, non accidentelle." },
-        { title: "La Vérité Renforce la Proximité", text: "L’honnêteté approfondit l’appartenance." },
-        { title: "La Sécurité comme Champ Partagé", text: "La sécurité se co-crée." },
-        { title: "La Réciprocité comme Rythme", text: "Donner et recevoir restent en équilibre." },
-        { title: "La Technologie Amplifie l’Humanité", text: "Les outils servent la vie, non l’ego." },
-        { title: "La Communauté comme Contenant Guérissant", text: "L’appartenance protège la croissance." }
+        { title: "Liefde als Architectuur", text: "Verbinding is gestructureerd, niet toevallig." },
+        { title: "Waarheid Versterkt Nabijheid", text: "Eerlijkheid verdiept verbondenheid." },
+        { title: "Veiligheid als Gedeeld Veld", text: "Veiligheid wordt samen gecreëerd." },
+        { title: "Wederkerigheid als Ritme", text: "Geven en ontvangen bewegen in balans." },
+        { title: "Technologie Versterkt Menselijkheid", text: "Tools dienen het leven, niet het ego." },
+        { title: "Community als Helende Container", text: "Verbondenheid beschermt groei." }
       ]
     },
 
     promises: {
       id: "promises",
-      title: "Ce que Nous ne Promettons Pas",
-      intro: "L’intégrité implique la clarté.",
-      notTitle: "Nous ne promettons pas",
+      title: "Wat Wij Niet Beloven",
+      intro: "Integriteit betekent helderheid.",
+      notTitle: "Wij beloven niet",
       notItems: [
-        "Une transformation instantanée",
-        "Une harmonie constante",
-        "Une histoire d’amour garantie",
-        "Des relations sur demande"
+        "Directe transformatie",
+        "Constante harmonie",
+        "Een gegarandeerd liefdesverhaal",
+        "Jouw mensen op aanvraag"
       ],
-      doTitle: "Nous promettons",
+      doTitle: "Wij beloven wel",
       doItems: [
-        "Une présence intègre",
-        "Des limites claires",
-        "Une vérité chaleureuse",
-        "Des structures qui protègent la sécurité"
+        "Integriteit van aanwezigheid",
+        "Heldere grenzen",
+        "Waarheid die warm blijft",
+        "Structuren die veiligheid beschermen"
       ]
     },
 
     scale: {
       id: "scale",
-      title: "Échelle & Gouvernance",
-      intro: "L’amour requiert une structure pour durer.",
+      title: "Schaal & Governance",
+      intro: "Liefde heeft structuur nodig om te blijven bestaan.",
       accordion: [
         {
-          title: "Structure hybride",
+          title: "Hybride Structuur",
           bodyType: "text",
           body: [
-            "L’initiative opère à l’intersection des systèmes IA, du financement philanthropique et du design communautaire."
+            "Het initiatief opereert op het snijvlak van AI-systemen, filantropische financiering en community design."
           ]
         },
         {
-          title: "Éthique technologique",
+          title: "Technologie-ethiek",
           bodyType: "text",
           body: [
-            "Les outils IA sont conçus pour accroître clarté et autonomie, jamais dépendance."
+            "AI-tools zijn ontworpen om helderheid en autonomie te vergroten, niet afhankelijkheid."
           ]
         },
         {
-          title: "Vision long terme",
+          title: "Langetermijnvisie",
           bodyType: "text",
           body: [
-            "L’objectif est une restauration culturelle à travers des systèmes relationnels sûrs et fondés sur la vérité."
+            "Het doel is culturele restauratie via veilige, op waarheid gebaseerde relationele systemen."
           ]
         }
       ]
@@ -284,29 +298,28 @@ window.__PAGE_DATA = {
 
     invitation: {
       id: "invitation",
-      title: "Approchez",
-      intro: "Si quelque chose en vous reconnaît ce champ, vous êtes bienvenu·e.",
+      title: "Kom Dichterbij",
+      intro: "Als iets in jou dit veld herkent, ben je welkom.",
       paragraphs: [
-        "Vous n’avez pas à transformer la peine, l’engourdissement ou l’agitation en identité.",
-        "Vous pouvez simplement observer ce qu’ils demandent."
+        "Je hoeft hartzeer, verdoving of onrust niet tot identiteit te maken.",
+        "Je mag eenvoudig opmerken waar het je toe uitnodigt."
       ],
       list: [
-        "Observer d’abord.",
-        "Rejoindre quand prêt·e.",
-        "Partir clairement si non aligné."
+        "Observeer eerst.",
+        "Sluit aan wanneer je klaar bent.",
+        "Vertrek helder als het niet klopt."
       ],
       action: {
-        label: "Entrer dans le Champ",
+        label: "Stap in het Veld",
         href: "#contact"
       }
-    }
-
+    },
   },
 
   footer: {
     links: [
-      { label: "Confidentialité", href: "#" },
-      { label: "Conditions", href: "#" }
+      { label: "Privacy", href: "#" },
+      { label: "Voorwaarden", href: "#" }
     ]
   }
 };
