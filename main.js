@@ -7,7 +7,7 @@ function getParams() {
   const lang = SUPPORTED_LANGS.includes(langParam) ? langParam : "en";
   return {
     lang,
-    variant: url.searchParams.get("variant") || "default",
+    variant: url.searchParams.get("variant") || "fol",
     slug: url.searchParams.get("slug") || "stance-landing"
   };
 }
