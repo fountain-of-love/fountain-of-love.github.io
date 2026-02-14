@@ -23,7 +23,7 @@ window.__PAGE_DATA = {
     stance: {
       id: "stance",
       title: "You’re already built for <span class='hero-love'>Love</span>.",
-      subtitle: "Nothing is missing. Sometimes the right space helps you remember.",
+      subtitle: "Nothing is missing. Most systems were never designed to support it.",
       intro: "A hybrid initiative connecting people, designing transformative processes, and shaping next-generation technologies. Love as source. Growth as process. Technology as vessel. We build spaces and systems where love becomes the organizing intelligence, shaping architectures for human flourishing.",
       rootedInLead: "We are rooted in:",
       rootedIn: [
@@ -55,20 +55,21 @@ window.__PAGE_DATA = {
     ground: {
       id: "ground",
       title: "What We Mean by Love",
-      intro: "Love is not sentiment. It is a field you can feel when it is present — safety, truth, and connection that can hold real life.",
+      intro: " We live inside systems. Work systems, platform systems, financial systems, educational systems and soon AI systems. Most of them were designed for efficiency, growth, scale, control. Very few were designed for love. Love is not sentiment. It is a field you can feel when it is present. Safety within the nervous system, truth without punishment, and connection without performance that can hold real life.",
       notTitle: "Love is not",
       notItems: [
-        "Romantic idealization",
-        "Blind positivity",
-        "Boundary collapse",
-        "Emotional performance"
+        "Work systems that reward performance but not safety",
+        "Education systems that train output but not emotional regulation",
+        "AI systems that optimize efficiency but not coherence",
+        "Social systems that confuse visibility with connection"
       ],
       meansTitle: "Love means",
       meansItems: [
-        "You can relax your body in someone’s presence",
-        "Truth lands without punishment",
-        "Imperfection does not threaten belonging",
-        "Giving and receiving without keeping score"
+        "Love is psychologica safety",
+        "Love is regulated nervous systems",
+        "Love is coherent collaboration",
+        "Love is governance that restores balance",
+        "Love is AI aligned with human dignity"
       ],
       closing: "Love is strength without coercion. A safe place for truth to move.",
       personalNote: {
