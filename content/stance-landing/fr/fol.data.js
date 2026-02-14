@@ -24,7 +24,7 @@ window.__PAGE_DATA = {
     stance: {
       id: "stance",
       title: "Vous êtes déjà construite pour <span class='hero-love'>l’Amour</span>.",
-      subtitle: "Rien ne manque. Parfois, le bon espace vous aide à vous en souvenir.",
+      subtitle: "Rien ne manque. La plupart des systèmes n’ont jamais été conçus pour le soutenir.",
       intro: "Une initiative hybride reliant les personnes, concevant des processus de transformation et façonnant les technologies de nouvelle génération. L’amour comme source. La croissance comme processus. La technologie comme vecteur. Nous construisons des espaces et des systèmes où l’amour devient l’intelligence organisatrice, façonnant des architectures au service de l’épanouissement humain.",
       rootedInLead: "Nous sommes enracinés dans :",
       rootedIn: [
@@ -50,20 +50,21 @@ window.__PAGE_DATA = {
     ground: {
       id: "ground",
       title: "Ce que nous entendons par Amour",
-      intro: "L’amour n’est pas un sentiment. C’est un champ que l’on peut ressentir lorsqu’il est présent — sécurité, vérité et connexion capables de contenir la vraie vie.",
-      notTitle: "L’amour n’est pas",
-      notItems: [
-        "Une idéalisation romantique",
-        "Une positivité aveugle",
-        "La dissolution des limites",
-        "Une performance émotionnelle"
+      "intro": "Nous vivons à l’intérieur de systèmes. Des systèmes de travail, des systèmes de plateforme, des systèmes financiers, des systèmes éducatifs et bientôt des systèmes d’IA. La plupart ont été conçus pour l’efficacité, la croissance, l’échelle et le contrôle. Très peu ont été conçus pour l’amour. L’amour n’est pas un sentiment. C’est un champ que l’on peut ressentir lorsqu’il est présent. Une sécurité dans le système nerveux, une vérité sans punition, et une connexion sans performance capable de soutenir la vraie vie.",
+      "notTitle": "L’amour n’est pas",
+      "notItems": [
+        "Des systèmes de travail qui récompensent la performance mais pas la sécurité",
+        "Des systèmes éducatifs qui entraînent la production mais pas la régulation émotionnelle",
+        "Des systèmes d’IA qui optimisent l’efficacité mais pas la cohérence",
+        "Des systèmes sociaux qui confondent visibilité et connexion"
       ],
-      meansTitle: "L’amour signifie",
-      meansItems: [
-        "Pouvoir détendre son corps en présence de quelqu’un",
-        "Une vérité qui se dépose sans punition",
-        "Une imperfection qui ne menace pas l’appartenance",
-        "Donner et recevoir sans tenir les comptes"
+      "meansTitle": "L’amour signifie",
+      "meansItems": [
+        "L’amour est la sécurité psychologique",
+        "L’amour est un système nerveux régulé",
+        "L’amour est une collaboration cohérente",
+        "L’amour est une gouvernance qui rétablit l’équilibre",
+        "L’amour est une IA alignée sur la dignité humaine"
       ],
       closing: "L’amour est une force sans coercition. Un lieu sûr où la vérité peut circuler.",
       personalNote: {
