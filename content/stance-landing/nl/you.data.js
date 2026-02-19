@@ -187,7 +187,7 @@ window.__PAGE_DATA = {
       ]
     },
 
-    deal: {
+    promises: {
       id: "deal",
       title: "De Deal",
       intro:
