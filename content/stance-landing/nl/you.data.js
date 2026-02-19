@@ -47,7 +47,7 @@ window.__PAGE_DATA = {
         primary: { label: "Bekijk het aanbod", href: "#offer" },
         secondary: { label: "Lees de deal", href: "#deal" }
       },
-      visual: { src: "./Fountain.png" }
+      visual: { src: "./you.png" }
     },
 
     ground: {
