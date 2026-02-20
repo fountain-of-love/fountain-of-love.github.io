@@ -19,7 +19,7 @@ window.__PAGE_DATA = {
       { label: "Uitnodiging", href: "#invitation" }
     ],
     primaryCta: {
-      label: "Check of dit klopt voor jou",
+      label: "Klopt dit voor jou?",
       href: "#invitation"
     }
   },
