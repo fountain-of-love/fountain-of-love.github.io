@@ -1,3 +1,4 @@
+// you.data.js (aligned to fol.data.js structure)
 window.__PAGE_DATA = {
   meta: {
     locale: "nl",
@@ -10,10 +11,11 @@ window.__PAGE_DATA = {
     brandName: "Fontein van Liefde",
     nav: [
       { label: "Wat dit is", href: "#ground" },
-      { label: "Voor jou", href: "#for-you" },
+      { label: "Gegrond", href: "#experience" },
       { label: "Het Pad", href: "#polarity" },
       { label: "Aanbod", href: "#offer" },
-      { label: "De Deal", href: "#deal" },
+      { label: "Principes", href: "#harmony" },
+      { label: "De Deal", href: "#promises" },
       { label: "Uitnodiging", href: "#invitation" }
     ],
     primaryCta: {
@@ -25,8 +27,7 @@ window.__PAGE_DATA = {
   sections: {
     stance: {
       id: "stance",
-      title:
-        "Bewust <span class='hero-love'>verbindend</span> ondernemen.",
+      title: "Bewust <span class='hero-love'>verbindend</span> ondernemen.",
       subtitle:
         "Ik help jou. Jij helpt mij. Samen helpen we een vzw bouwen die transparantie en zelfzorg normaliseert.",
       intro:
@@ -45,7 +46,7 @@ window.__PAGE_DATA = {
       ],
       actions: {
         primary: { label: "Bekijk het aanbod", href: "#offer" },
-        secondary: { label: "Lees de deal", href: "#deal" }
+        secondary: { label: "Lees de deal", href: "#promises" }
       },
       visual: { src: "./you.png" }
     },
@@ -73,13 +74,13 @@ window.__PAGE_DATA = {
         "Een veld waar ondernemen menselijk wordt: helder, verbonden en gedragen."
     },
 
-    forYou: {
-      id: "for-you",
+    // Mapped from former `forYou`
+    experience: {
+      id: "experience",
       title: "Wat is er in voor jou",
       intro:
         "Als individu krijg je geen ‘motivatie’. Je krijgt ondersteuning die meetelt in je agenda, je omzet en je zenuwstelsel.",
-      bulletsTitle: "Je wint tijd, kansen en helderheid via:",
-      bullets: [
+      cards: [
         {
           title: "Back-office die rust brengt",
           text:
@@ -95,9 +96,7 @@ window.__PAGE_DATA = {
           text:
             "Herbruikbare templates, frameworks en kennis. Minder uitvinden, meer bouwen."
         }
-      ],
-      closing:
-        "Kort: jij blijft eigenaar van je pad, wij versterken je draagkracht."
+      ]
     },
 
     polarity: {
@@ -114,26 +113,13 @@ window.__PAGE_DATA = {
           "Groei die botst met zelfzorg",
           "Transparantie die voelt als risico"
         ],
-        note:
-          "Je hoeft niet harder te werken. Je hebt een betere container nodig."
+        note: "Je hoeft niet harder te werken. Je hebt een betere container nodig."
       },
       comparison: {
         currentTitle: "Solo dragen",
-        currentItems: [
-          "Overuren",
-          "Brandjes blussen",
-          "Schuldgevoel",
-          "Isolatie",
-          "Vage grenzen"
-        ],
+        currentItems: ["Overuren", "Brandjes blussen", "Schuldgevoel", "Isolatie", "Vage grenzen"],
         futureTitle: "Verbonden bouwen",
-        futureItems: [
-          "Structuur",
-          "Flow",
-          "Kansen",
-          "Zelfzorg",
-          "Heldere afspraken"
-        ]
+        futureItems: ["Structuur", "Flow", "Kansen", "Zelfzorg", "Heldere afspraken"]
       },
       pathway: {
         title: "De droomdriehoek (Empowerment dynamics)",
@@ -175,7 +161,7 @@ window.__PAGE_DATA = {
           text:
             "Wij openen deuren wanneer het klopt. Warm intro’s, geen koude acquisitie-roulette.",
           linkLabel: "Hoe werkt dit?",
-          href: "#deal"
+          href: "#promises"
         },
         {
           title: "Bibliotheek (templates & frameworks)",
@@ -187,49 +173,92 @@ window.__PAGE_DATA = {
       ]
     },
 
-    promises: {
-      id: "deal",
-      title: "De Deal",
+    // Optional but keeps parity with fol if your template expects it
+    system: {
+      id: "system",
+      title: "Hoe het veld werkt",
       intro:
-        "We maken het simpel, eerlijk en toekomstbestendig. Een basisprijs voor wat moeilijk te meten is, en een gedeeld upside-model voor wat wél meetbaar groeit.",
-      blocks: [
-        {
-          title: "1) Fixed price",
-          text:
-            "Voor de structurele ondersteuning (back-office + container + basisbegeleiding). Dit is het deel dat je voelt, maar niet netjes in minuten kunt vangen."
-        },
-        {
-          title: "2) 20% op extra’s",
-          text:
-            "Op de extra opbrengst die ontstaat door hogere prijzen, betere dealflow of netwerkactivatie. Jij wint meer, wij winnen mee."
-        },
-        {
-          title: "3) Als je echt verbindt: doneer je hetzelfde bedrag aan de vzw",
-          text:
-            "Niet als verplichting, wel als signaal van alignment: jouw groei voedt ook het collectieve veld."
-        }
+        "De samenwerking is een container die je draagkracht vergroot: structuur vermindert ruis, verbinding activeert kansen, transparantie beschermt integriteit.",
+      flow: [
+        { key: "Structuur", text: "Back-office en afspraken verminderen mentale belasting." },
+        { key: "Verbinding", text: "Warm netwerk opent deuren wanneer er echte fit is." },
+        { key: "Transparantie", text: "Zichtbaarheid zonder schaamte maakt groei duurzaam." }
       ],
-      finePrintTitle: "Transparantie-afspraak",
-      finePrintItems: [
-        "We maken samen zichtbaar wat ‘extra’s’ zijn (en wat niet).",
-        "We houden het controleerbaar zonder wantrouwen.",
-        "We kiezen voor eenvoud boven juridische acrobatie."
+      practicalTitle: "Concreet",
+      practicalItems: [
+        "Administratie en opvolging",
+        "Intro’s en dealflow via netwerk",
+        "Templates, frameworks en bibliotheek",
+        "Afspraken die helder blijven"
       ]
     },
 
-    selfcare: {
-      id: "selfcare",
-      title: "Onze ene voorwaarde: Zelfzorg",
+    // Mapped from former `selfcare` (and enriched to match fol’s `principles` list format)
+    harmony: {
+      id: "harmony",
+      title: "Onze werkprincipes",
       intro:
-        "Niet als wellness. Als volwassenheid. Want als we samen voor onszelf zorgen, evolueren we als wereld.",
-      itemsTitle: "Dat betekent concreet:",
-      items: [
-        "Je bent aware van de vzw-principes (waarom we dit doen).",
-        "Je groeit door creatie (niet alleen door praten).",
-        "Je ‘shows up’ via transparantie (wat speelt, wat werkt, wat schuurt)."
+        "Zelfzorg is hier geen wellness. Het is volwassenheid: ritme, grenzen en eerlijkheid, zodat groei niet ten koste gaat van je lichaam.",
+      principles: [
+        { title: "Zelfzorg als voorwaarde", text: "Ritme en grenzen maken groei houdbaar." },
+        { title: "Transparantie als spier", text: "Zichtbaar blijven zonder perfectie." },
+        { title: "Groei door creatie", text: "Niet alleen praten, ook bouwen en doen." },
+        { title: "Wederkerigheid zonder boekhouding", text: "Helder spel, warme samenwerking." },
+        { title: "Geen afhankelijkheid", text: "Richting zonder ‘guru-constructie’." },
+        { title: "Menselijke economie", text: "Winst is oké, extractie is dat niet." }
+      ]
+    },
+
+    // Re-shaped to fol’s `promises` schema (so it renders)
+    promises: {
+      id: "promises",
+      title: "De Deal",
+      intro:
+        "We maken het simpel, eerlijk en toekomstbestendig: een basisprijs voor wat moeilijk te meten is, en een gedeeld upside-model voor wat wél meetbaar groeit.",
+      notTitle: "Wij doen niet",
+      notItems: [
+        "Verborgen voorwaarden of onduidelijke definities van ‘extra’s’",
+        "Juridische acrobatie als vervanging van vertrouwen",
+        "Controle en wantrouwen als ‘samenwerking’",
+        "Druk om sneller te gaan dan jouw draagkracht"
       ],
-      closing:
-        "Zelfzorg is hier: ritme, grenzen en eerlijkheid. Zodat groei niet ten koste gaat van je lichaam."
+      doTitle: "Wij doen wel",
+      doItems: [
+        "Fixed price voor structurele ondersteuning (back-office + container + basisbegeleiding).",
+        "20% op extra opbrengst die aantoonbaar ontstaat door pricing, dealflow of netwerkactivatie.",
+        "Als je echt verbindt: doneer je hetzelfde bedrag aan de vzw (niet verplicht, wel als alignment-signaal).",
+        "Transparantie-afspraak: samen zichtbaar maken wat ‘extra’s’ zijn, controleerbaar zonder wantrouwen, eenvoud boven complexiteit."
+      ]
+    },
+
+    // Optional parity section (accordion) similar to fol `scale`
+    scale: {
+      id: "scale",
+      title: "Transparantie & governance",
+      intro: "Om dit veld te laten bestaan, houden we het helder: afspraken, bijdrage en intentie blijven zichtbaar.",
+      accordion: [
+        {
+          title: "VZW-anker",
+          bodyType: "text",
+          body: [
+            "De vzw is het morele kompas: bijdrage en transparantie als gedeelde waarde, zodat het veld niet ‘privé eigendom’ wordt."
+          ]
+        },
+        {
+          title: "Eenvoudige afspraken",
+          bodyType: "text",
+          body: [
+            "We definiëren samen wat ‘extra opbrengst’ is, en houden het auditbaar zonder wantrouwen."
+          ]
+        },
+        {
+          title: "Zelfzorg als ritme",
+          bodyType: "text",
+          body: [
+            "Geen groei ten koste van je lichaam. Grenzen en pacing zijn onderdeel van de samenwerking."
+          ]
+        }
+      ]
     },
 
     resonance: {
@@ -246,8 +275,7 @@ window.__PAGE_DATA = {
     invitation: {
       id: "invitation",
       title: "Uitnodiging",
-      intro:
-        "Als je voelt: ‘dit is wat ik zocht’, dan is de volgende stap eenvoudig.",
+      intro: "Als je voelt: ‘dit is wat ik zocht’, dan is de volgende stap eenvoudig.",
       paragraphs: [
         "Vertel ons wat je bouwt, waar je vastloopt, en wat je wil dat er lichter wordt.",
         "Wij spiegelen of dit veld je kan dragen en welke vorm past."
@@ -257,10 +285,7 @@ window.__PAGE_DATA = {
         "Voorstel (fixed + upside afspraken)",
         "Start: back-office + netwerk + bibliotheek"
       ],
-      action: {
-        label: "Stap in het Veld",
-        href: "#contact"
-      }
+      action: { label: "Stap in het Veld", href: "#contact" }
     }
   },
 
