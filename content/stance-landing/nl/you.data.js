@@ -265,7 +265,7 @@ window.__PAGE_DATA = {
       id: "resonance",
       title: "Resonantie is optioneel",
       paragraphs: [
-        "Dit is niet voor iedereen.",
+        "Dit is voor iedereen die wil groeien.",
         "Je mag eerst observeren. Je mag instappen wanneer je er klaar voor bent. Je mag helder vertrekken als het niet klopt.",
         "Verbondenheid zonder vrijheid is geen verbondenheid."
       ],
