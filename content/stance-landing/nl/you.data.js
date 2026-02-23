@@ -29,7 +29,7 @@ window.__PAGE_DATA = {
       id: "stance",
       title: "Bewust <span class='hero-love'>verbindend</span> ondernemen.",
       subtitle:
-        "Ik help jou. Jij helpt mij. Samen helpen we een vzw bouwen die transparantie en zelfzorg normaliseert.",
+        "Ik steun jou. Jij steunt mij. Samen bouwen we een vzw die transparantie en zelfzorg normaliseert.",
       intro:
         "Dit is een ondernemerschapsveld voor mensen die willen groeien zonder zichzelf te verliezen.\nGeen trucjes. Geen druk.\nWel: ondersteuning, netwerk, bibliotheek en een helder spel van wederkerigheid.",
       rootedInLead: "Dit is geworteld in:",
