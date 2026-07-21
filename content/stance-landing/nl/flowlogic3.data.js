@@ -22,61 +22,62 @@ window.__PAGE_DATA = {
 
   sections: {
     stance: {
-      id: "stance",
-      title: "<span class='hero-love'>IT just works.</span>",
-      subtitle:
-        "Ontwerp, verbind en automatiseer je bedrijfsprocessen in één beheersbare omgeving.",
-      intro:
-        "FlowLogic brengt proceslogica, menselijke beslissingen, gegevens, automatisering en artificiële intelligentie samen.\n\nJe hoeft je werking niet in een standaard softwaresysteem te wringen.\nJe richt de software in rond de manier waarop je onderneming werkt.",
-      rootedInLead: "FlowLogic helpt je om:",
-      rootedIn: [
-        "processen helder en uitvoerbaar te maken;",
-        "mensen, gegevens en bestaande toepassingen te verbinden;",
-        "automatisering en AI gecontroleerd toe te voegen."
-      ],
-      weDoNotLead: "Zonder dat je eerst:",
-      weDoNot: [
-        "je volledige IT-landschap moet vervangen;",
-        "maanden op een eerste resultaat moet wachten;",
-        "de controle over processen en gegevens moet afstaan."
-      ],
-      actions: {
-        primary: {
-          label: "Ontdek FlowLogic",
-          href: "#ground"
-        },
-        secondary: {
-          label: "Bespreek je eerste flow",
-          href: "#invitation"
-        }
-      },
-      visual: {
-        src: "./flowlogic.png"
-      }
+  id: "stance",
+  title: "<span class='hero-love'>IT just works.</span>",
+  subtitle:
+    "De snelheid en flexibiliteit van AI, gebouwd op de betrouwbaarheid van klassieke IT.",
+  intro:
+    "Veel AI-oplossingen beginnen bij wat technisch mogelijk is.\nFlowLogic begint bij hoe je onderneming werkelijk werkt.\n\nJe processen, beslissingen, gegevens, mensen en systemen worden samengebracht in één beheersbare omgeving. Daarna voegen we AI alleen toe waar ze aantoonbaar helpt.",
+  rootedInLead: "FlowLogic brengt samen:",
+  rootedIn: [
+    "betrouwbare proceslogica voor voorspelbare uitvoering;",
+    "mensen, gegevens en bestaande systemen binnen één werkende flow;",
+    "AI waar interpretatie, flexibiliteit of ondersteuning waarde toevoegt."
+  ],
+  weDoNotLead: "Geen magische AI, maar:",
+  weDoNot: [
+    "duidelijke processen;",
+    "controleerbare beslissingen;",
+    "veilige gegevensstromen;",
+    "betrouwbare digitale bedrijfsvoering."
+  ],
+  actions: {
+    primary: {
+      label: "Ontdek FlowLogic",
+      href: "#ground"
     },
+    secondary: {
+      label: "Bespreek je eerste flow",
+      href: "#invitation"
+    }
+  },
+  visual: {
+    src: "./flowlogic.png"
+  }
+},
 
-    ground: {
-      id: "ground",
-      title: "AI zonder de miserie van AI",
-      intro:
-        "AI kan snel interpreteren, voorstellen formuleren en omgaan met variatie.\nBedrijfsprocessen moeten daarnaast voorspelbaar, controleerbaar en veilig blijven.\nFlowLogic brengt die twee werelden samen.",
-      notTitle: "Waar het vandaag mis kan lopen",
-      notItems: [
-        "AI krijgt te veel vrijheid zonder duidelijke grenzen",
-        "Een overtuigend antwoord wordt verward met een betrouwbaar resultaat",
-        "Belangrijke acties gebeuren zonder validatie of goedkeuring",
-        "Niemand kan achteraf precies verklaren wat er gebeurde"
-      ],
-      meansTitle: "Hoe FlowLogic dat oplost",
-      meansItems: [
-        "Vaste regels waar voorspelbaarheid nodig is",
-        "Mensen waar verantwoordelijkheid of nuance telt",
-        "AI waar interpretatie, flexibiliteit of ondersteuning helpt",
-        "Logging en controle waar acties verklaarbaar moeten blijven"
-      ],
-      closing:
-        "De snelheid van AI. De betrouwbaarheid van IT."
-    },
+ground: {
+  id: "ground",
+  title: "AI zonder de miserie van AI",
+  intro:
+    "AI kan snel interpreteren, voorstellen formuleren en omgaan met variatie.\nKlassieke IT zorgt voor structuur, voorspelbaarheid en controle.\nFlowLogic laat beide samenwerken.",
+  notTitle: "Waar veel AI-oplossingen beginnen",
+  notItems: [
+    "Bij wat een model technisch kan uitvoeren",
+    "Bij autonomie zonder voldoende procescontext",
+    "Bij antwoorden die overtuigend klinken, maar moeilijk controleerbaar zijn",
+    "Bij losse experimenten naast de bestaande bedrijfsvoering"
+  ],
+  meansTitle: "Waar FlowLogic begint",
+  meansItems: [
+    "Bij hoe je onderneming werkelijk werkt",
+    "Bij de processen en beslissingen die waarde creëren",
+    "Bij de mensen, gegevens en systemen die daarvoor nodig zijn",
+    "Bij duidelijke grenzen voor automatisering en AI"
+  ],
+  closing:
+    "Minder magische AI. Meer betrouwbare digitale bedrijfsvoering."
+},
 
     experience: {
       id: "experience",
