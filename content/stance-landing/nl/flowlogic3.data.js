@@ -25,7 +25,7 @@ window.__PAGE_DATA = {
   id: "stance",
   title: "<span class='hero-love'>IT just works.</span>",
   subtitle:
-    "De snelheid en flexibiliteit van AI, gebouwd op de betrouwbaarheid van klassieke IT.",
+    "De snelheid en flexibiliteit van AI, gebouwd op de betrouwbaarheid en best practices van oerklassieke IT.",
   intro:
     "Veel AI-oplossingen beginnen bij wat technisch mogelijk is.\nFlowLogic begint bij hoe je onderneming werkelijk werkt.\n\nJe processen, beslissingen, gegevens, mensen en systemen worden samengebracht in één beheersbare omgeving. Daarna voegen we AI alleen toe waar ze aantoonbaar helpt.",
   rootedInLead: "FlowLogic brengt samen:",
@@ -34,7 +34,7 @@ window.__PAGE_DATA = {
     "mensen, gegevens en bestaande systemen binnen één werkende flow;",
     "AI waar interpretatie, flexibiliteit of ondersteuning waarde toevoegt."
   ],
-  weDoNotLead: "Geen magische AI, maar:",
+  weDoNotLead: "Geen magische AI, wel:",
   weDoNot: [
     "duidelijke processen;",
     "controleerbare beslissingen;",
